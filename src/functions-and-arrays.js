@@ -36,7 +36,20 @@ function sumNumbers(arr) {
 
 // Iteration #3.1 Bonus:
 function sum(arr) {
-  for (let i = 0; i < arr.length; i++) {}
+  let acc = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === 'number') {
+      // acc inicia em zero e vai acumulando durante o loop
+      acc = acc + arr[i];
+    } else if (typeof arr[i] === 'string') {
+      acc = acc + arr[i].length;
+    } else if (arr[i] === true) {
+      acc = acc + 1;
+    } else {
+      acc = acc + 0;
+    }
+  }
+  return acc;
 }
 
 // Iteration #4: Calculate the average
